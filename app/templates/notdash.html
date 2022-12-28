@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Hello Plotly (but not Dash)</h1>
+        <div id="chart" class="chart"></div>
+        <div id="pie" class="chart"></div>
+        <div id="sun" class="chart"></div>
+        <div id="box" class="chart"></div>
+    </body>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script type="text/javascript">
+        var graphs = {{graphJSON | safe}};
+        Plotly.plot('chart', graphs,{});
+
+        var pigraphs = {{piJSON | safe}};
+        Plotly.plot('pie', pigraphs,{});
+
+        var sungraphs = {{sunJSON | safe}};
+        Plotly.plot('sun', sungraphs,{});
+
+        var boxgraphs = {{boxJSON | safe}};
+        Plotly.plot('box', boxgraphs,{});
+    </script>
+</html>

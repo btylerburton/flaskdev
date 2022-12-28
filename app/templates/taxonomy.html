@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        {% if themes %}
+        <div id="themes">
+            <h1>Dataset Themes</h1>
+            <ul>
+                {% for key, value in themes.items() %}
+                <li><a href="/themes/{{ key }}">{{ key }} :: {{ value }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% elif tags %}
+        <div id="tags">
+            <h1>Tags for "{{theme}}"</h1>
+            Back to <a href="/themes">themes </a>
+            <ul>
+                {% for key, value in tags.items() %}
+                <li><a href="https://catalog.data.gov/dataset/?tags={{key}}">{{ key }} :: {{ value }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </body>
+</html>
